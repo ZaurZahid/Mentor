@@ -1,0 +1,8 @@
+ hr,
+ .ant-card-head {
+     border-bottom: 1px solid #14ff24;
+ }
+ 
+ .ant-card-bordered {
+     border-bottom: none;
+ }

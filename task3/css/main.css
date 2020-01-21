@@ -1,0 +1,105 @@
+ body {
+     padding: 0;
+     margin: 0
+ }
+ 
+ body::after {
+     content: "";
+     color: darkgoldenrod;
+     background-image: url('../img/Custom-food-shop-wallpaper-Old-cement-wall-coffee-3D-retro-murals-for-the-cafe-restaurant-hotel.jpg');
+     opacity: 0.6;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;
+ }
+ 
+ .main,
+ .btn-container {
+     text-align: center
+ }
+ /*
+.main {
+    flex-direction: row;
+}
+
+.btn-container {
+    flex-direction: column;
+} */
+ 
+ img {
+     width: 200px;
+     height: 200px
+ }
+ 
+ a {
+     text-decoration: none;
+     color: rgb(13, 29, 173);
+ }
+ 
+ label {
+     font-weight: 500;
+ }
+ 
+ .btn {
+     padding: 12px 30px;
+     margin: 10px 0;
+     color: white;
+     border: 2px solid aqua;
+     border-radius: 4px;
+     transition: all 0.3s ease;
+     cursor: pointer;
+     outline: none;
+ }
+ 
+ .btn:hover {
+     transform: scale(1.2);
+     transition: all 0.3s ease;
+ }
+ 
+ .choose {
+     background-color: rgb(255, 55, 255);
+ }
+ 
+ .prepare {
+     background-color: rgba(0, 128, 0, 0.87);
+ }
+ 
+ .hide {
+     display: none;
+ }
+ 
+ .disabled {
+     cursor: not-allowed;
+     background-color: rgb(56, 236, 181);
+ }
+ 
+ .cursor-not {
+     cursor: not-allowed;
+ }
+ 
+ .disabled:hover {
+     transform: scale(1);
+ }
+ 
+ .drink-list {
+     list-style: none;
+     background: aqua;
+ }
+ 
+ .change,
+ .info {
+     background: cornsilk;
+     padding: 11px;
+     text-align: center;
+     font-size: 17px;
+     font-weight: 800;
+     width: 287px;
+     margin: 0 auto;
+ }
+ 
+ .drink li {
+     font-size: 24px;
+ }

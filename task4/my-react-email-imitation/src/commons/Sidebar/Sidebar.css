@@ -1,0 +1,186 @@
+.ant-layout-header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ant-layout {
+    background: none !important;
+    opacity: 0.97;
+}
+
+.dark-theme {
+    background: #41279c !important;
+}
+
+.ant-menu {
+    background: none
+}
+
+.ant-menu-vertical {
+    border: none
+}
+
+.sider {
+    margin-top: 87px;
+    margin-left: 5px;
+    left: 0px;
+    flex: 0 0 200px;
+    max-width: 200px;
+    min-width: 200px;
+    width: 200px;
+    height: 68%;
+    position: fixed;
+    background: white;
+    border: 3px solid blue;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.switch:focus {
+    outline: 0;
+}
+
+.switch:focus:hover {
+    box-shadow: none;
+}
+
+.switch {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    list-style: none;
+    font-feature-settings: 'tnum', "tnum";
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 44px;
+    height: 22px;
+    line-height: 20px;
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.36s;
+    user-select: none;
+}
+
+.switch-checked {
+    background-color: #1890ff;
+}
+
+.switch-checked .switch-inner {
+    margin-right: 24px;
+    margin-left: 6px;
+}
+
+.switch-checked::after {
+    left: 100%;
+    margin-left: -1px;
+    transform: translateX(-100%);
+    box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+}
+
+.switch-inner {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+}
+
+button {
+    text-transform: none;
+    font-family: inherit;
+    text-rendering: auto;
+    word-spacing: normal;
+    text-transform: none;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-image: initial;
+}
+
+button,
+input {
+    overflow: visible;
+    touch-action: manipulation;
+}
+
+.menu-root {
+    box-shadow: none;
+    border: none;
+}
+
+.menu {
+    background: none;
+    zoom: 1;
+    margin-top: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    padding-left: 0;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 0;
+    list-style: none;
+    outline: none;
+    transition: all 0.3s ease;
+    zoom: 1;
+}
+
+.menu-item:not(:last-child) {
+    margin-bottom: 8px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 4px;
+    padding: 0 16px;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+}
+
+.menu-item>a {
+    display: block;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.menu::before,
+.menu::after {
+    display: table;
+    content: '';
+}
+
+.menu-item>a::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    content: '';
+}
+
+a {
+    touch-action: manipulation;
+    color: #1890ff;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}

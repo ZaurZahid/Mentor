@@ -1,0 +1,86 @@
+{
+    "inbox": [{
+            "id": 1,
+            "name": "zzzz1",
+            "from": "zzzza@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:45",
+            "text": "Lorem Ipsum as their default model text, and a search forLorem Ipsum as their default model text, and a search for"
+        },
+
+        {
+            "id": 2,
+            "name": "zzzz2",
+            "from": "zzzz2@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:46",
+            "text": "Lorem Ipsum as their default model text, and a search forLorem Ipsum as their default model text, and a search for"
+        },
+
+        {
+            "id": 3,
+            "name": "zzzz3",
+            "from": "zzzz3@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:47",
+            "text": "Lorem Ipsum as their default model text, and a search forLorem Ipsum as their default model text, and a search for"
+        }
+    ],
+
+    "draft": [{
+            "id": 1,
+            "name": "zzzz",
+            "from": "zzzz@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:45",
+            "text": "Delivery notification may take up to 12 hours.  the message has been sent but the recipient's network is unable to deliver it."
+        },
+
+        {
+            "id": 2,
+            "name": "zzzz2",
+            "from": "zzzz2@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:46",
+            "text": "Delivery notification may take up to 12 hours.  the message has been sent but the recipient's network is unable to deliver it."
+        },
+
+        {
+            "id": 3,
+            "name": "zzzz3",
+            "from": "zzzz3@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:47",
+            "text": "Delivery notification may take up to 12 hours.  the message has been sent but the recipient's network is unable to deliver it."
+        }
+    ],
+
+    "sent": [{
+            "id": 1,
+            "name": "zzzz",
+            "from": "zzzz@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:45",
+            "text": "You can save your message as a draft to be completed and sent at a later time. Draft messages are saved in your Draft folder until you send them or delete them from the folder. You can enable a preference to automatically save your email as a draft while you are composing the message."
+        },
+
+        {
+            "id": 2,
+            "name": "zzzz2",
+            "from": "zzzz2@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:46",
+            "text": "You can save your message as a draft to be completed and sent at a later time. Draft messages are saved in your Draft folder until you send them or delete them from the folder. You can enable a preference to automatically save your email as a draft while you are composing the message."
+        },
+
+        {
+            "id": 3,
+            "name": "zzzz3",
+            "from": "zzzz3@gmail.com",
+            "to": "adam@gmail.com",
+            "time": "15:47",
+            "text": "You can save your message as a draft to be completed and sent at a later time. Draft messages are saved in your Draft folder until you send them or delete them from the folder. You can enable a preference to automatically save your email as a draft while you are composing the message."
+        }
+    ]
+
+}

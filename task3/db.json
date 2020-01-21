@@ -1,0 +1,20 @@
+{
+    "Drinks": {
+        "Cappucino": {
+            "price": 6,
+            "count": 5
+        },
+        "Americano": {
+            "price": 5,
+            "count": 4
+        },
+        "Expresso": {
+            "price": 8,
+            "count": 1
+        },
+        "Latte": {
+            "price": 12,
+            "count": 1
+        }
+    }
+}
