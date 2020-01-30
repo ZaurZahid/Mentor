@@ -3,7 +3,7 @@ import { List, Typography } from "antd";
 import {  Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { getSentMails } from "../../store/mail";
+import { takeSentMails } from "../../store/mail";
 /*    const data = [
     {
         id: 1,
@@ -39,9 +39,9 @@ const mapStateToProps = store => {
     };
 };
 
-export const Sent = connect(mapStateToProps, { getSentMails })(props => {
+export const Sent = connect(mapStateToProps, { takeSentMails })(props => {
     useEffect(() => {
-        props.getSentMails();
+        props.takeSentMails();
     }, []);
 
     // const { sent } = props;

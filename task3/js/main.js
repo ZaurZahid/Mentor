@@ -45,7 +45,7 @@ function runMyCode() {
             }
             if (drinks[drinkName].count <= 0) {
                 prepare.classList.add('disabled');
-                drinkStatus.innerHTML = "There is no " + drinkName + " anymore! :( ";
+                status.innerHTML = "There is no " + drinkName + " anymore! :( ";
                 success = false;
             }
             if (success) {

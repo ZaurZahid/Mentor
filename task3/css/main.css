@@ -7,6 +7,9 @@
      content: "";
      color: darkgoldenrod;
      background-image: url('../img/Custom-food-shop-wallpaper-Old-cement-wall-coffee-3D-retro-murals-for-the-cafe-restaurant-hotel.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
      opacity: 0.6;
      top: 0;
      left: 0;

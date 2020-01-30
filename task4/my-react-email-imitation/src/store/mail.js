@@ -1,9 +1,9 @@
-import { getInboxAPI, getDraftAPI, getSentAPI, getSingleAPI } from '../API/index';
+import { ApiInbox, ApiDraft, ApiSent, ApiSetSingle } from '../API/index';
 
-const SET_INBOX_MAILS = 'SET_INBOX_MAILS';
-const SET_SENT_MAILS = 'SET_SENT_MAILS';
-const SET_DRAFT_MAILS = 'SET_DRAFT_MAILS';
-const SET_SINGLE_MAIL = 'SET_SINGLE_MAIL';
+const INBOX_MAILS = 'INBOX_MAILS';
+const SENT_MAILS = 'SENT_MAILS';
+const DRAFT_MAILS = 'DRAFT_MAILS';
+const SINGLE_MAIL = 'SINGLE_MAIL';
 
 
 const initialState = {
@@ -16,22 +16,22 @@ const initialState = {
 export function mailReducer(state = initialState, { type, payload }) {
 
     switch (type) {
-        case SET_INBOX_MAILS:
+        case INBOX_MAILS:
             return {
                 ...state,
                 mails: [...payload]
             };
-        case SET_SENT_MAILS:
+        case SENT_MAILS:
             return {
                 ...state,
                 sent: [...payload]
             };
-        case SET_DRAFT_MAILS:
+        case DRAFT_MAILS:
             return {
                 ...state,
                 drafts: [...payload]
             };
-        case SET_SINGLE_MAIL:
+        case SINGLE_MAIL:
             return {
                 ...state,
                 single: {...payload }
@@ -42,29 +42,29 @@ export function mailReducer(state = initialState, { type, payload }) {
     }
 }
 
-const setInboxMails = (mails) => {
+const inboxMails = (mails) => {
     return {
-        type: SET_INBOX_MAILS,
+        type: INBOX_MAILS,
         payload: mails
     }
 }
 
-const setSentMails = (mails) => {
+const sentMails = (mails) => {
     return {
-        type: SET_SENT_MAILS,
+        type: SENT_MAILS,
         payload: mails
     }
 }
 
-const setDraftMails = (mails) => {
+const draftMails = (mails) => {
     return {
-        type: SET_DRAFT_MAILS,
+        type: DRAFT_MAILS,
         payload: mails
     }
 }
-const setSingleMail = (mail) => {
+const singleMail = (mail) => {
     return {
-        type: SET_SINGLE_MAIL,
+        type: SINGLE_MAIL,
         payload: mail
     }
 }
@@ -75,11 +75,11 @@ const setSingleMail = (mail) => {
 
 
 /// Middlewares
-export const getInboxMails = () => async(dispatch) => {
+export const takeInboxMails = () => async(dispatch) => {
     try {
-        const response = await getInboxAPI();
+        const response = await ApiInbox();
         const json = await response.json();
-        dispatch(setInboxMails(json));
+        dispatch(inboxMails(json));
 
 
     } catch (error) {
@@ -88,11 +88,11 @@ export const getInboxMails = () => async(dispatch) => {
 }
 
 
-export const getSentMails = () => async(dispatch) => {
+export const takeSentMails = () => async(dispatch) => {
     try {
-        const response = await getSentAPI();
+        const response = await ApiSent();
         const json = await response.json();
-        dispatch(setSentMails(json));
+        dispatch(sentMails(json));
 
 
     } catch (error) {
@@ -101,11 +101,11 @@ export const getSentMails = () => async(dispatch) => {
 }
 
 
-export const getDraftMails = () => async(dispatch) => {
+export const takeDraftMails = () => async(dispatch) => {
     try {
-        const response = await getDraftAPI();
+        const response = await ApiDraft();
         const json = await response.json();
-        dispatch(setDraftMails(json));
+        dispatch(draftMails(json));
 
 
     } catch (error) {
@@ -114,11 +114,11 @@ export const getDraftMails = () => async(dispatch) => {
 }
 
 
-export const getSingleMail = (id) => async(dispatch) => {
+export const takeSingleMail = (id) => async(dispatch) => {
     try {
-        const response = await getSingleAPI({}, id);
+        const response = await ApiSetSingle({}, id);
         const json = await response.json();
-        dispatch(setSingleMail(json));
+        dispatch(singleMail(json));
 
     } catch (error) {
 

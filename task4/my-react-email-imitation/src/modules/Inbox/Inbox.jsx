@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import   "./Inbox.css";
 
 import {connect} from "react-redux";
-import {getInboxMails} from "../../store/mail";
+import {takeInboxMails} from "../../store/mail";
 
 /*   const data = [
     {
@@ -42,10 +42,10 @@ const mapStateToProps= (store)=>{
 }
 
 
-export const Inbox = connect(mapStateToProps,{getInboxMails})( props => {
+export const Inbox = connect(mapStateToProps,{takeInboxMails})( props => {
 
     useEffect(()=>{
-        props.getInboxMails();
+        props.takeInboxMails();
     },[])
     return (
         <div >

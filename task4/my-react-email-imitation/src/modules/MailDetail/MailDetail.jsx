@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { List, Card } from 'antd';
 import { withRouter } from "react-router";
-import {getSingleMail} from "../../store/mail";
+import {takeSingleMail} from "../../store/mail";
 import {connect} from "react-redux";
 import "./Mail.css"
 
@@ -22,10 +22,10 @@ const mapStateToProps= (store)=>{
 
 
 
-export const MailDetail = withRouter(connect(mapStateToProps,{getSingleMail})(props=> {
+export const MailDetail = withRouter(connect(mapStateToProps,{takeSingleMail})(props=> {
 
     useEffect(()=>{
-        props.getSingleMail(props.match.params.id);
+        props.takeSingleMail(props.match.params.id);
     },[])
     return (
         <List

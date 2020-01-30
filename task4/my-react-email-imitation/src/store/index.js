@@ -1,7 +1,7 @@
 import { mailReducer } from './mail';
-import thunk from 'redux-thunk';
+import thunk from 'redux-thunk'; //for middleware
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 
 

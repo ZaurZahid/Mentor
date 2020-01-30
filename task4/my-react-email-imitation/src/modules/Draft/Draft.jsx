@@ -4,7 +4,7 @@ import {   Link } from "react-router-dom";
 
 import {connect} from "react-redux";
 
-import {getDraftMails} from "../../store/mail";
+import {takeDraftMails} from "../../store/mail";
  
 /*  const data = [
      {
@@ -42,10 +42,10 @@ const mapStateToProps= (store)=>{
     }
   }
 
-export const Draft = connect(mapStateToProps,{getDraftMails})((props)=> {
+export const Draft = connect(mapStateToProps,{takeDraftMails})((props)=> {
 
     useEffect(()=>{
-        props.getDraftMails();
+        props.takeDraftMails();
     },[])
     return (
        

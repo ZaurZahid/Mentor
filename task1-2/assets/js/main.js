@@ -25,7 +25,7 @@ $(function() {
          <div class="add-task">
             <a class="open-add-task" href="">
                 <span class="icon-add icon-sm"> <i class="fa fa-plus" aria-hidden="true"></i></span>
-                <span class="js-add-a-card">Kart ekle</span>
+                <span class="js-add-a-card">Add card</span>
             </a>
         </div>`
     $(document.body).on('click', '.add-task', function(e) {
@@ -39,12 +39,39 @@ $(function() {
         let draggedCard = $('.card').draggable({
             helper: "clone"
         });
-        $('.board-column').droppable({
-            drop: function(event, ui) {
-                var a = ui.draggable.insertBefore($(event.target).find('.add-task'))
-                    // a ? alert("salam") : alert("saol") 
-            }
-        });
+        $('.card').on('dragstart', (e) => { //yeri deyiserse
+            var colIndexPrev = $(e.target).parents('.board-column').index();
+            var cardIndexPrev = $(e.target).index() - 1 /* .parents('.card') */ ;
+            // console.log(colIndexPrev, cardIndexPrev);
+
+            $('.board-column').droppable({
+                drop: function(event, ui) {
+                    var droppableCard = ui.draggable.insertBefore($(event.target).find('.add-task'))
+
+                    let boardIndex = event.target.id, //newColIndex
+                        cardIndex = droppableCard.index() - 1 //newCardIndex
+
+                    const title = droppableCard.find('#title').text();
+                    const text = droppableCard.find('#text').text();
+                    const date = droppableCard.find('#date').text()
+
+                    data[colIndexPrev][cardIndexPrev] = null; //goturduyumuzu hemin column-dan sil 
+                    var newBoard = data[colIndexPrev].filter(function(el) {
+                        return el != null; //deleting null values
+                    });
+                    data[colIndexPrev] = newBoard
+
+
+                    data[boardIndex][cardIndex] = { //yeni cola elave ele
+                        title,
+                        text,
+                        date
+                    };
+                    updateStorage();
+
+                }
+            });
+        })
 
     }
 
@@ -77,7 +104,7 @@ $(function() {
         `;
 
         const template = isStatic ? `
-       <div class="card tasks-container" data-status="static">
+       <div class="card tasks-container" data-status="static" >
             <div class="card-body">
            ${forEditing } 
                 <div class="button-container">

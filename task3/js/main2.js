@@ -26,21 +26,18 @@ function runMyCode() {
 
     CoffeeMachine.prototype.makeCoffee = function(drinkName, price) {
         let success = true;
-        status.innerHTML = "";
-        changeOfMoney.innerHTML = "";
-
         if (success) {
             if (price >= drinks[drinkName].price) { /* if , amount is greater or equal to its own pirce And its checking is greater than 0 show info */
                 if (parseInt(price - drinks[drinkName].price) > 0) {
                     changeOfMoney.innerHTML = 'Your change: ' + parseInt(price - drinks[drinkName].price) + ' $';
                 }
-
             } else {
                 status.innerHTML = 'Noo, You should pay: ' + drinks[drinkName].price + ' $ for ' + drinkName;
                 changeOfMoney.innerHTML = "";
                 success = false;
             }
         }
+        if (!drinks.hasOwnProperty(drinkName)) alert("we dont have that type of drink")
         if (drinks[drinkName].count <= 0) {
             prepare.classList.add('disabled');
             drinkStatus.innerHTML = "There is no " + drinkName + " anymore! :( ";
@@ -59,7 +56,7 @@ function runMyCode() {
     choose.addEventListener('click', () => {
         if (!listOfDrinks.childNodes.length) {
             drinkNames.forEach(el => {
-                let list = '<a href="" class="drink"><li>' + el + ' (count: ' + drinks[el.slice(1)].count + ')' + ' (price: ' + drinks[el.slice(1)].price + ')' + '</li></a>';
+                let list = drinks[el.slice(1)].count == 0 ? 'Over </br>' : '<a href="" class="drink  " ><li>' + el + ' (count: ' + drinks[el.slice(1)].count + ')' + ' (price: ' + drinks[el.slice(1)].price + ')' + '</li></a>';
                 listOfDrinks.innerHTML += list;
             })
         }
@@ -68,7 +65,6 @@ function runMyCode() {
         remainder ? null : payment.classList.remove('hide'); /* show input */
     })
     listOfDrinks.addEventListener('click', (e) => {
-
         chosenDrink = e.target.innerHTML;
         prepare.classList.remove('disabled');
         payment.classList.remove('hide');
@@ -79,7 +75,7 @@ function runMyCode() {
     prepare.addEventListener('click', () => {
         const drink = chosenDrink.substr(1, parseInt(chosenDrink.indexOf('(')) - 2); /* TAKE TILL braket */
         var remainder = changeOfMoney.textContent.match(/\d+/g)
-        const price = remainder ? remainder[0] : parseInt(payment.value);
+        const price = (remainder && remainder !== '') ? remainder[0] : parseInt(payment.value);
         // console.log(drink, price);
         prepare.classList.add('disabled');
         payment.classList.add('hide');
@@ -87,11 +83,9 @@ function runMyCode() {
         newCoffeeMachine.makeCoffee(drink, price)
         payment.value = remainder ? remainder[0] : '';
 
-        price = 0
         listOfDrinks.innerHTML = ""
     })
     const newCoffeeMachine = new CoffeeMachine('Coffee Machine');
-
 }
 let drinks;
 
